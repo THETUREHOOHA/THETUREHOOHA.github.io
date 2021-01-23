@@ -1,0 +1,240 @@
+<html>
+
+
+<head>
+    <title>My Mapbox GL JS Map</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css" rel="stylesheet" />
+    <style>
+
+        /*Change your style here*/
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100vw;	/* 100% of viewport width */
+            height: 100vh;	/* 100% of viewport height */
+        }    
+
+    </style>
+</head>
+
+
+
+<body>
+
+ <style>
+#map {
+position: fixed;
+width: 50%;
+}
+#features {
+width: 50%;
+margin-left: 50%;
+font-family: sans-serif;
+overflow-y: scroll;
+background-color: #fafafa;
+}
+section {
+padding: 25px 50px;
+line-height: 25px;
+border-bottom: 1px solid #ddd;
+opacity: 0.25;
+font-size: 13px;
+}
+section.active {
+opacity: 1;
+}
+section:last-child {
+border-bottom: none;
+margin-bottom: 200px;
+}
+</style>  
+    
+    
+ <div id="map"></div>   
+ <div id="features">  
+    <section id="baker" class="active">
+        <h3>UIC West Campus has House room sublet!!</h3>
+<p>
+UIC West Campus has House room sublet!!
+$500 - $550 includes water and electricity grid charges every month. The rental period is until July 31, and you can move in on August 1 at the earliest.
+Neighbors are all local residents. The streets are quiet and there are few cars. The basic furniture of the room is complete, and the house facilities are complete.4 minutes walk 157,12,7, 8 minutes walk the blue line.Three bus stops (more than 10 minutes walk) to PETS Fairprice Supermarket.
+    <a href="https://ibb.co/FxJ5VDX"><img src="https://i.ibb.co/mDt98c0/dee3fc5524d8637db76cadfe2ff5fdb.jpg" alt="dee3fc5524d8637db76cadfe2ff5fdb" border="0"></a>
+</p>
+</section>
+<section id="aldgate">
+<h3>UIC nearby side bedroom for rent, $550 per month</h3>
+<p>
+Located in the east campus of UIC, the 2B2B small bedroom is only 11 minutes' walk away from the library.
+1110 W Washburne Ave Unit 101.
+The whole house is 2B2B. Large space, inside the house comes with washing machine, dryer, microwave oven.
+Now recruit a small bedroom girl roommate ~ rent 550/ month, including water rate alarm rental fee.
+May enter in August, if you need furniture, please inform us in advance for negotiation.
+Our roommates are all UIC sisters, who are easy to get along with.
+4min walk to CVS, 7min walk to Taylor Street, nearby Road 60 and Road 12 can be directly to downtown and major supermarkets.
+Free street park at the door.
+Convenient transportation, convenient life
+    <a href="https://ibb.co/Bc7J3SK"><img src="https://i.ibb.co/VJhG9Pp/2e9a99bec2688cc111d9117bfd56bb5.jpg" alt="2e9a99bec2688cc111d9117bfd56bb5" border="0"></a>
+</p>
+</section>
+<section id="london-bridge">
+<h3>(Short-term rental is available)UIC East Campus Library will hire long-term roommates, and you can walk 2 minutes to the East Campus Library</h3>
+<p>
+
+4 Bedroom, 2 Bath, 1 Balcony for rent, single rent/full rent, prime location in the West Loop, gateway bus stop, safe and reliable walking distance to UIC, DePaul DT, IIT DT campus, Union Station and Blue Line
+    <a href="https://ibb.co/zGkcPZF"><img src="https://i.ibb.co/729crKQ/6b7ae64571de65ae439407640c2ed2c.jpg" alt="6b7ae64571de65ae439407640c2ed2c" border="0"></a>
+</p>
+</section>
+<section id="woolwich">
+<h3>UIC East Campus is nearly 2B1B complete set of sublet, 3 minutes walk to the school</h3>
+<p>
+I am the UIC PhD boy boy roommate (can help drive to move) location: Circle Park 2 b1. 5 b (1111 s laflin st) advocate lie second lie liberally, rent can be discuss Room and sitting room lighting, public Spaces convenience a 20-minute walk east campus, west campus walk 10 minutes, the bus 157 campus as long as 5 minutes, everything else is a golden section of UIC school.
+</p>
+    <p>
+    The interior of the community is very safe, there are security patrols at any time, the interior green is good, there are tennis courts, basketball courts, a good place to exercise.Jewel Osco and Costco are 5 minutes' walk away. Taylor Street is full of restaurants, shopping and eating.
+    </p>
+    <a href="https://ibb.co/vcZx4nm"><img src="https://i.ibb.co/S6RXwC0/6bad5cddb5391ffba060e02fe475c44.jpg" alt="6bad5cddb5391ffba060e02fe475c44" border="0"></a>
+</section>
+<section id="gloucester">
+<h3>Gloucester Road</h3>
+<p>
+UIC West Campus has House room sublet!!$500 per month, including water and power grid charges, lease until July 31, the earliest can be moved in on May 10.The room has large glass Windows facing the small garden, the neighbors are all local residents, the street is quiet and less cars, the view and lighting is excellent, the basic furniture of the room is complete, the house supporting facilities are complete, independent laundry room, garage, printing, express delivery to the door, bag check in.
+</p>
+    <p>
+    4 minutes walk 157,12,7, 8 minutes walk the blue line.Roommates are UICgraduate and PhD, little quiet.Price is negotiable according to check-in time!!
+    </p>
+    <a href="https://ibb.co/9Wnn5Df"><img src="https://i.ibb.co/gJyyK2X/96ab29d07bc8e02cd4f25affe72898f.jpg" alt="96ab29d07bc8e02cd4f25affe72898f" border="0">
+   </a>
+    
+</section>
+
+
+
+</div>
+<script>
+    
+	mapboxgl.accessToken = 'pk.eyJ1IjoiaG9vaGEiLCJhIjoiY2o5MnBoc2ZxMHEyaTMycDlxNnJvdWN0eCJ9.IBLQ1hh65icn-02NzaCmEg';
+/*replace it with your own accessToken */
+    
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/hooha/ckefponwk23lo19qq5bc6ame5', 	
+center: [-87.629765, 41.803480],
+zoom: 15.5,
+bearing: 27,
+pitch: 45
+});
+    
+    
+
+     
+
+    
+    
+    
+    
+ 
+var chapters = {
+'baker': {
+bearing: 27,
+center: [-87.68277807116466, 41.87087429974261],
+zoom: 15.5,
+pitch: 20
+},
+'aldgate': {
+duration: 6000,
+center: [-87.65471233058771, 41.86664493185528],
+bearing: 150,
+zoom: 15,
+pitch: 0
+},
+'london-bridge': {
+bearing: 90,
+center: [-87.65298907315868, 41.87116201736051],
+zoom: 15,
+speed: 0.6,
+pitch: 40
+},
+'woolwich': {
+bearing: 90,
+center: [-87.64158613102384, 41.87527180802238], 
+zoom: 15,
+pitch: 50
+},
+'gloucester': {
+bearing: 45,
+center: [ -87.66389977130608, 41.868409222521336],
+zoom: 15.3,
+pitch: 20,
+speed: 0.5
+},
+'caulfield-gardens': {
+bearing: 180,
+center: [-87.65305064636844, 41.87015144468043],
+zoom: 15,
+},
+
+};
+ 
+// On every scroll event, check which element is on screen
+window.onscroll = function () {
+var chapterNames = Object.keys(chapters);
+for (var i = 0; i < chapterNames.length; i++) {
+var chapterName = chapterNames[i];
+if (isElementOnScreen(chapterName)) {
+setActiveChapter(chapterName);
+break;
+}
+}
+};
+ 
+var activeChapterName = 'baker';
+function setActiveChapter(chapterName) {
+if (chapterName === activeChapterName) return;
+ 
+map.flyTo(chapters[chapterName]);
+ 
+document.getElementById(chapterName).setAttribute('class', 'active');
+document.getElementById(activeChapterName).setAttribute('class', '');
+ 
+activeChapterName = chapterName;
+}
+ 
+function isElementOnScreen(id) {
+var element = document.getElementById(id);
+var bounds = element.getBoundingClientRect();
+return bounds.top < window.innerHeight && bounds.bottom > 0;
+}
+</script>
+        
+        
+        
+        
+        
+</body>
+
+
+
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiaG9vaGEiLCJhIjoiY2o5MnBoc2ZxMHEyaTMycDlxNnJvdWN0eCJ9.IBLQ1hh65icn-02NzaCmEg';
+/*replace it with your own accessToken */
+    
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/hooha/ckefponwk23lo19qq5bc6ame5', 	
+/*replace it with your own style */
+
+    });    
+</script>
+
+
+</html>
